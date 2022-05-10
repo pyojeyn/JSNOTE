@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="month" onchange="selectMonth(this);">       
+    </select>
+</body>
+<script>
+    var thisDate = new Date();
+    var thisYear = thisDate.getFullYear();
+
+    console.log("thisYear(현재년도) ===> " + thisYear);
+
+    window.onload = function(){
+        getMonthOptionText();
+    }
+
+
+
+    function getMonthOptionText(){ // masterzzzzzz   
+        var month = 12;
+        var strMonth = "<option value=''>전체</option>";
+        for(var i=1; i<=month; i++){
+            if(i < 10){
+                strMonth += "<option value="+i+">"+thisYear+"0"+i+"</>"
+            }else{
+                strMonth += "<option value="+i+">"+thisYear+i+"</>"
+            }
+            
+            document.getElementById("month").innerHTML = strMonth;
+        }
+    }
+    
+    var selectMonth = function (select_obj){
+        // 우선 selectbox에서 선택된 index를 찾고 
+        var selected_index = select_obj.selectedIndex;
+    
+        // 선택된 index의 value를 찾고 
+        var selected_value = select_obj.options[selected_index].value;
+        var selected_text = select_obj.options[selected_index].text;
+
+        // 원하는 동작을 수행한다. 여기서는 그냥 alert해주는 식으로만 처리함. 
+        console.log("value 값 ==> "+selected_value);
+        console.log("text 값 ==> "+selected_text);
+
+        var year = selected_text.substring(0,4)
+        console.log("year ===> " + year);        
+
+        // 아 자바스크립트 현재 연도 뽑아내는 객체 있나? 그리고 그거 변수에 담아서 selectbox 옵션값에 넣어줘야하눈데 
+        console.log("options의 길이 ===> "+select_obj.options.length);
+        console.log(select_obj.options);
+
+        var startDate = "";
+        var endDate = "";
+
+        // 윤달 계산
+        function f_leapyear(yy) {
+        if (yy % 4 == 0 && yy % 100 != 0 || yy % 400 == 0) return 1;
+        else return 0;
+        }
+
+        console.log("윤달 계산 ===> " + f_leapyear(thisYear));
+        
+        // ,3,5,7,8,10,12
+        switch ( selected_value ) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+                startDate = thisYear + "0" + selected_value + "01";
+                endDate = thisYear + "0" + selected_value + "31"
+                console.log(startDate + "~" + endDate);
+                break;
+            case '10':
+            case '12':                
+                startDate = thisYear + selected_value + "01";
+                endDate = thisYear + selected_value + "31"
+                console.log(startDate + "~" + endDate);
+                break;
+            case '2':
+                startDate = thisYear + "0" + selected_value + "01";
+                endDate = thisYear + "0" + selected_value + String(Number(28+f_leapyear(thisYear)));
+                console.log(startDate + "~" + endDate);
+                break;
+            case '4':
+            case '6':
+            case '9':
+                startDate = thisYear + "0" + selected_value + "01";
+                endDate = thisYear + "0" + selected_value + "30"
+                console.log(startDate + "~" + endDate);
+                break;
+            case '11':    
+                startDate = thisYear + selected_value + "01";
+                endDate = thisYear + selected_value + "30"
+                console.log(startDate + "~" + endDate);
+            break;    
+            }
+
+    };
+
+    
+</script>
+</html>

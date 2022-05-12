@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자함수</title>
+    <script>
+        //객체 리터럴
+        let user = {
+            name : 'Jane',
+            age : 29,
+        }
+        // 생성자 함수 함수명 첫글자 대문자로!
+        function User(name, age){
+            // this = {}
+            this.name = name;
+            this.age = age;
+            //return this;
+            this.sayName = function(){
+                console.log("이름 : "+this.name);
+            }
+        }
+        let user1 = new User('Mike', 30);
+        let user2 = new User('Hoon',28);
+        let user3 = new User('Tom', 17);
+        let user5 = new User('Han',23);
+        user5.sayName(); //Han
+    </script>
+</head>
+<body>
+    <h2>생성자 함수 힘죠!</h2>
+</body>
+</html>

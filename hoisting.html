@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var는 한번 선언된 변수를 다시 선언 할 수 있다.
+        var name = 'Mike';
+        console.log(name); // Mike
+        var name = 'Jane';
+        console.log(name); // Jane
+
+        // var는 선언하기 전에 사용할 수 있다.
+        console.log(animal); //undefined
+        var animal = 'pig';
+        // 이유는 var는 ↓ 이렇게 동작하기 때문이다 ◎ 호이스팅~
+        // 호이스팅 : 스코프 내부 어디서든 변수 선언은 최상위에 선언된 것 처럼 행동
+        var color;
+        console.log(color); // undefined : 선언은 호이스팅 되지만 할당은 호이스팅 되지 않기 때문
+        color = 'red'; // 할당은 이 줄에서 동작함.
+
+        // let은 불가능하다 
+        let food = 'soup';
+        console.log(food); //soup
+        //let food = 'noodle'; //error!!
+        //Uncaught SyntaxError: Identifier 'food' has already been declared
+        //console.log(food);
+
+        /*
+            변수의 생성 과정
+            1. 선언 단계
+            2. 초기화 단계
+            3. 할당 단계
+
+            var : 함수 스코프 (function-scoped) 함수내에서 선언된 변수만 그 지역 변수 
+            1. 선언과 초기화 동시에  / 초기화 : undefined를 할당 해주는 단계
+            2. 할당 단계
+
+            let : 블록 스코프 (block-scoped)
+            1. 선언 단계
+            2. 초기화 단계
+            3. 할당 단계
+            -> 에러나는 이유
+
+            const : 블록 스코프 (block-scoped) ex) 지역내에서만? (중괄호 내에서만 사용가능)함수, if문, while문, try/catch문 등..
+            1. 선언 + 초기화 + 할당
+
+        */
+
+        const gender; //error!! -> Uncaught SyntaxError: Missing initializer in const declaration
+        gender = 'male'
+    </script>
+</head>
+<body>
+    <h2>자바스크립트 힘죠!</h2>
+</body>
+</html>
+
+<!--
+    let, const : ES6 부터 생김
+    var : 그 이전.
+
+    var와 let의 차이점..?
+    var는 한번 선언된 변수를 다시 선언할 수 있다.
+    
+-->

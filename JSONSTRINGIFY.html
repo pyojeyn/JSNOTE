@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let 사람 = [{"이름":"이정훈", "나이":28, "고향":"천안"}, {"이름":"표제인", "나이":29, "고향":"용인"}];
+    console.log("사람===> " + 사람);
+    console.log("사람타입 : " + typeof(사람)); // object
+
+    let Color = ["빨강", "분홍", "파랑", "노랑", "보라"];
+    console.log("Color ===> " + Color);
+    console.log("Color 타입 ===> " + typeof(Color));
+
+    let Color2 = [];
+    Color2 = ["빨강", "분홍", "파랑", "노랑", "보라"];
+    console.log("Color2===> " + typeof(Color2));
+
+    let Color3 = new Array("red", "blue", "green");
+    console.log("Color3===> " + Color3);
+    console.log("Color3 타입 ===> " + typeof(Color3));
+
+    let 사람제이슨 = JSON.stringify(사람); 
+    console.log("사람제이슨 ===> " + 사람제이슨);
+    console.log("사람제이슨  타입 ===> " + typeof(사람제이슨)); // string ==> 이미 프론트에서 String 으로 변환 해주고 서버로 보냈음.
+    사람제이슨 = 사람제이슨.replaceAll('&#34;', '\"');
+    console.log("replaceAll 이후::" + 사람제이슨);
+
+</script>
+<body>
+    
+</body>
+</html>

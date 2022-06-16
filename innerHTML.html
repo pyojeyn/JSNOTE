@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change(){
+            let hello = document.getElementById("Hello");
+            
+            hello.innerHTML += "<p onclick='changeTwo()' id='jane'>"+"제인이"+"</p>";
+            // hello.innerHTML += "<p id='jane'>"+"제인이"+"</p>";
+    
+        }
+
+        function changeTwo(){
+            let jane = document.getElementById("jane");
+            jane.innerHTML = "<p>"+"정훈이"+"</p>";
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="Hello" onclick="change()">
+        안녕
+    </div>
+</body>
+</html>

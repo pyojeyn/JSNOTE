@@ -11,12 +11,12 @@
             
             hello.innerHTML += "<p onclick='changeTwo()' id='jane'>"+"제인이"+"</p>";
             // hello.innerHTML += "<p id='jane'>"+"제인이"+"</p>";
-    
+            // 커밋할 때 : innerHTML 에서 만들어진 돔에서 함수 적용되는지 궁금
         }
 
         function changeTwo(){
-            let jane = document.getElementById("jane");
-            jane.innerHTML = "<p>"+"정훈이"+"</p>";
+            
+            console.log("innERHTML");
         }
         
     </script>

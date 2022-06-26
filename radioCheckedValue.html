@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let showresult = () => {
+        let result = document.querySelector('input[name="fruits"]:checked').value; 
+        console.log("체크 된 값 ====> " + result);
+    }
+    /*
+        여기서는 바닐라 자바스크립트를 이용해서 radio checked value 값을 얻어오는 방법을 공부 했다. 
+        ==>  document.querySelector('input[name="fruits"]:checked').value;
+        지금 개발하고 있는 코드에서는 다 제이쿼리로만 되어있길래 자바스크립트로 radio checked 값을 알아내는 방법을 한번쯤은 알아보고 싶었다. 
+
+        ** 참고 : 제이쿼리로 radio checked value 값 알아오는 방법
+        ==> $("input[name='fruits']:checked").val();
+    */
+</script>
+<body>
+    <input type="radio" name="fruits" id="apple" onclick="showresult()" value="apple">
+    <label for="apple">apple</label>
+
+    <input type="radio" name="fruits" id="banana" onclick="showresult()" value="banana">
+    <label for="banana">banana</label>
+
+    <input type="radio" name="fruits" id="orange" onclick="showresult()" value="orange">
+    <label for="orange">orange</label>
+
+    <input type="radio" name="fruits" id="melon" onclick="showresult()" value="melon">
+    <label for="melon">melon</label>
+</body>
+</html>

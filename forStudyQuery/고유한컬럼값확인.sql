@@ -10,3 +10,4 @@ having count(*) > 1
 SELECT file_size  , count(*) cnt  FROM slaid  
 Group by file_size  
 having count(*) > 1
+-- 푸쉬 테스트

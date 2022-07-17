@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<script>
+    // 함수 작성
+    // 1. 매개 변수가 없는 함수
+    function showError(){
+        alert('에러가 발생');
+    }
+    //showError();
+
+    // 함수 작성
+    // 2. 매개 변수가 없는 함수 
+    function sayHello(name){
+        let msg = `Hello`; // 함수 밖에서 사용 X => 지역 변수 
+        if(name){
+            msg += `, ${name}`;
+        }
+        console.log(name);
+        console.log(msg);
+    }
+
+    sayHello('jane');
+
+    
+</script>
+<body>
+    
+</body>
+</html>

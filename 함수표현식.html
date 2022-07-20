@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 함수 선언문 vs 함수 표현식
+
+    // 함수 표현식 
+    // 1. 함수 표현식 생성 이후에 호출 가능
+    let sayHello = function(){
+        console.log("Hello");
+    }
+    sayHello(); // 여기서만 가능 
+
+    // 함수 선언문 
+    // 1. 어디서든 호출 가능
+
+    sayGoodBye(); // 여기다 써도 되고 
+    function sayGoodBye(){
+        console.log("GoodBye")
+    }
+    sayGoodBye(); // 요기다 써도 됨 
+
+
+    // 왜 함수 선언문 위에 호출 했는데 작동 할 수 있을 까 ?
+    // 자바스크립트의 내부 알고리즘때매 : 실행전 초기화 단계에서 코드의 모든 함수 선언문을 찾아서 생성해 놈. => 호이스팅 
+</script>
+<body>
+    
+</body>
+</html>

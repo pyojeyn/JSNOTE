@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const superman = {
+            name: "clark",
+            age: 33
+        }
+
+        // 접근 
+        superman.name // clark
+        superman['age'] // 33
+
+        console.log(superman.name);
+        console.log(superman['age']);
+        console.log(superman);
+
+        // 추가
+        superman.gender = 'male';
+        superman['hairColor'] = 'black';
+        console.log("프로퍼티 추가하고 나서 ~");
+        console.log(superman);
+
+        // 삭제
+        delete superman.hairColor;
+        console.log("hairColor delete 하고 나서 ~");
+        console.log(superman);
+
+        // Object - 단축 프로퍼티
+        const name = 'jane';
+        const age = 33;
+
+        const superwoman = {
+            name, // name :name
+            age, // age : age
+            gender:'female',
+        }
+
+        console.log(superwoman);
+
+        // Object - 프로퍼티 존재 여부 확인 
+        superman.birthDay // undefined
+
+        // in 연산자를 사용해서도 확인할 수가 있다. 
+        'birthDay' in superman;
+        console.log('birthDay' in superman); //false
+        console.log('name' in superman); //true
+
+
+        // for ... in 반복문
+        for(let key in superwoman){
+            console.log("key ===> " + key); // name, age, jender 출력됨.
+            console.log("superwoman[key] ===> " + superwoman[key]); // jane, 33, female
+        }
+
+
+        // 객체 
+        function makeObject(name, age){
+            return {
+                name : name,
+                age : age,
+                hobby : 'football'
+            }
+        }
+        // 매개변수와, 프로퍼티 명이 같으면 아래와 같이 축약할 수 있다.
+        function makeObject2(name, age){
+            return {
+                name, 
+                age, 
+                hobby : 'coding'
+            }
+        }
+
+        const Mike = makeObject('Mike', 30);
+        console.log("마이크~~");
+        console.log(Mike)
+
+        const Jane = makeObject2("Jane", 29);
+        console.log("제인 !!!! ");
+        console.log(Jane);
+
+        // 나이를 확인하고 성인인지 아닌지 구분 
+        function isAdult(user){
+            if(!('age' in user) ||user.age < 20){ //user 에 age 가 없거나 20 살 미만이라면 false 반환 
+                return false;
+            }
+            return true;
+        }
+
+        const Hoon = {
+            name: 'hoon',
+            age: 28
+        }
+
+        const Mini = {
+            name : "Mini"
+        };
+
+        console.log(isAdult(Hoon));
+        console.log(isAdult(Mini)); 
+
+        
+        // for in 문 예제 
+        for(data in Hoon){
+            console.log(Hoon[data]);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

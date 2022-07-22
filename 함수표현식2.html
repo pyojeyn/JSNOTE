@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 함수 표현식 
+    // showError(); // => "error" 출력안됨. 에러남. 선언이 먼저임
+
+    let showError = function(){
+        console.log("error")
+    }
+
+    // 함수 선언문
+    showError2(); // 함수 호출 잘됨. error2 출력됨. 
+
+    function showError2(){
+        console.log("error2");
+    }
+
+    // 화살표 함수 
+    //showError3(); // 함수 호출 안됨. 에러남. 
+
+    let showError3 = () => {
+        console.log("error3");
+    }
+
+    const add = (num1, num2) => num1 + num2;
+
+    console.log(add(4,5)); // 9
+    
+
+    // 결론 : 함수 표현식 보다는 선언문이 더 자유롭다~
+    // 화살표 함수는 ES6 이후 굉장히 활발하게 사용되고 있음 
+</script>
+<body>
+    
+</body>
+</html>

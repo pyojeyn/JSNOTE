@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 이랬던 함수가 
+    let add = function(num1, num2){
+        return num1 + num2;
+    }
+
+    // 요렇게 변함. 이게 화살표 함수임 (arrow function)
+    let add = (num1, num2) => {
+        return num1+num2;
+    }
+
+    // return 문 생략하고 {}를 ()로 바꿀 수 있다. 
+    let add = (num1, num2) => (num1 + num2);
+    // return 문이 한줄이라면 ()도 생략 할 수 있다. 
+    let add = (num1, num2) => num1 + num2;
+
+    // 매개 변수가 딱 하나라면 매개변수를 감싸는 ()도 생략 할 수 있다. 
+    let sayHello = name => `Hello, ${name}`;
+
+    
+</script>
+<body>
+    
+</body>
+</html>
